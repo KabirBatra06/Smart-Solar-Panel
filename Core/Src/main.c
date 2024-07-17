@@ -1487,20 +1487,20 @@ int main(void)
 	time /= 100;
 	float min = time % 100;
 	time /= 100;
-    float hour = (time % 100) + 5;
-
-    float year = (date % 100) + 2000;
-    date /= 100;
-    float month = date % 100;
-    date /= 100;
-    float day = date % 100;
-
-    if (longiDir == 'W') {
-    	longi *= -1;
-    }
-    if (latDir == 'S') {
-    	lat *= -1;
-    }
+	float hour = (time % 100) + 5;
+	
+	float year = (date % 100) + 2000;
+	date /= 100;
+	float month = date % 100;
+	date /= 100;
+	float day = date % 100;
+	
+	if (longiDir == 'W') {
+		longi *= -1;
+	}
+	if (latDir == 'S') {
+		lat *= -1;
+	}
 
 	double *angles = caller(day, year, month, hour, min, sec, 0, lat, longi);
 	int zenithAngle = ((int)angles[0]) % 90;
